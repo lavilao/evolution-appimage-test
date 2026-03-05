@@ -6,7 +6,8 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm evolution
+# Install kontact with all optional dependencies
+pacman -Syu --noconfirm kontact akregator kaddressbook kmail korganizer zanshin
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -20,7 +21,7 @@ get-debloated-pkgs --add-common --prefer-nano
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
 #
 # if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
+#	nightly build steps
 # else
-# 	regular build steps
+#	regular build steps
 # fi
